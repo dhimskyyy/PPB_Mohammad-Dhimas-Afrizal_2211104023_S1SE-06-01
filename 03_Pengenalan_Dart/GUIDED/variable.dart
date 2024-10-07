@@ -3,22 +3,18 @@ void main() {
   var name = "Alice"; // Tipe data String
   var age = 25; // Tipe data Integer
   print("Nama: $name, Usia: $age");
+
+
+
+// Multiple variable
+String firstName, lastName; // Tipe data String
+firstName = "Charlie";
+lastName = "Brown";
+print("Nama Lengkap: $firstName $lastName");
+
+
+// Type annotation
+String name2 = "Bob"; // Tipe data String
+int age2 = 30; // Tipe data Integer
+print("Nama: $name2, Usia: $age2");
 }
-
-
-// multiple_variable
-// void main() {
-// // Multiple variable
-// String firstName, lastName; // Tipe data String
-// firstName = "Charlie";
-// lastName = "Brown";
-// print("Nama Lengkap: $firstName $lastName");
-// }
-
-// type_annotaion
-// void main() {
-// // Type annotation
-// String name = "Bob"; // Tipe data String
-// int age = 30; // Tipe data Integer
-// print("Nama: $name, Usia: $age");
-// }

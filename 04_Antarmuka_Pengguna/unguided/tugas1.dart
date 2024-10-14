@@ -91,3 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+void main() {
+  runApp(const ListViewApp());
+}

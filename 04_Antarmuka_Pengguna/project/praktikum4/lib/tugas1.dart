@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const ListViewApp());
+}
+
 class ListViewApp extends StatelessWidget {
   const ListViewApp({super.key});
 

@@ -1,30 +1,25 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:flutter_application_1/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Tourist Places List Test', (WidgetTester tester) async {
+    // Build the ListViewApp and trigger a frame.
+    await tester.pumpWidget(const ListViewApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the first tourist place is displayed.
+    expect(find.text('Eiffel Tower'), findsOneWidget);
+    expect(find.text('Paris, France'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Verify that another place is not yet visible before scrolling.
+    expect(find.text('Grand Canyon'), findsNothing);
+
+    // Scroll down to reveal the Grand Canyon item.
+    await tester.drag(find.byType(ListView), const Offset(0, -500));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Now verify that the Grand Canyon is visible.
+    expect(find.text('Grand Canyon'), findsOneWidget);
+    expect(find.text('Arizona, USA'), findsOneWidget);
   });
 }
